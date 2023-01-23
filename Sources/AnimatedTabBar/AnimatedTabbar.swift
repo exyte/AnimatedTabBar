@@ -75,7 +75,6 @@ public struct AnimatedTabBar: View {
                             }
                         }
                         .foregroundColor(selectedIndex == i ? selectedColor : unselectedColor)
-                        .offset(y: selectedIndex == i ? -8 : 0)
                         .background(ButtonPreferenceViewSetter())
                     }
                 }
@@ -181,11 +180,12 @@ struct IndentableRect: Shape {
         let br = CGPoint(x: rect.maxX, y: rect.maxY)
 
         let yCurve = t * 15
+        let indentWidth = 60.0
 
         let indentPath = NormalizedPath(rect: CGRect(
-            x: rect.minX + 3.5/12 * rect.width,
+            x: rect.midX - indentWidth/2,
             y: rect.minY,
-            width: 5/12 * rect.width,
+            width: indentWidth,
             height: yCurve)
         ).path()
 

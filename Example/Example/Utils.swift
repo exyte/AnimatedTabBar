@@ -19,4 +19,7 @@ extension Color {
 
         self.init(red: Double(r) / 0xff, green: Double(g) / 0xff, blue: Double(b) / 0xff)
     }
+
+    static var exampleGrey = Color(hex: "0C0C0C")
+    static var examplePurple = Color(hex: "7D26FE")
 }
