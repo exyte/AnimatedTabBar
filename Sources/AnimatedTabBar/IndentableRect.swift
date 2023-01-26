@@ -37,7 +37,7 @@ struct IndentableRect: Shape {
         let indentWidth = 60.0
 
         let indentPath = TranslatedPath(rect: CGRect(
-            x: (indentX != nil ? indentX! : rect.midX) - indentWidth/2,
+            x: rect.midX - indentWidth/2,
             y: rect.minY,
             width: indentWidth,
             height: yCurve)
