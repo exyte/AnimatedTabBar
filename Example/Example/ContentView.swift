@@ -18,14 +18,17 @@ struct ContentView: View {
         ZStack(alignment: .bottom) {
             Color.examplePurple.edgesIgnoringSafeArea(.all)
 
-            VStack {
+            VStack(spacing: 50) {
                 AnimatedTabBar(selectedIndex: $selectedIndex,
-                               views: (0..<names.count).map { buttonAt($0, name: names[$0]) })
+                               views: (0..<names.count).map { Image(systemName: names[$0]) })
                 .cornerRadius(16)
                 .selectedColor(.examplePurple)
                 .unselectedColor(.examplePurple.opacity(0.3))
                 .ballColor(.white)
                 .verticalPadding(30)
+                .ballTrajectory(.straight)
+                .ballAnimation(.interpolatingSpring(stiffness: 130, damping: 15))
+                .indentAnimation(.easeOut(duration: 0.3))
                 .frame(maxWidth: .infinity)
                 .padding(8)
                 
@@ -38,6 +41,17 @@ struct ContentView: View {
                 .verticalPadding(15)
                 .frame(maxWidth: .infinity)
                 .padding(8)
+
+                AnimatedTabBar(selectedIndex: $selectedIndex,
+                               views: (0..<names.count).map { buttonAt($0, name: names[$0]) })
+                .cornerRadius(16)
+                .selectedColor(.examplePurple)
+                .unselectedColor(.examplePurple.opacity(0.3))
+                .ballColor(.white)
+                .verticalPadding(30)
+                .frame(maxWidth: .infinity)
+                .padding(8)
+
             }
         }
     }

@@ -13,7 +13,7 @@ struct IndentableRect: Shape {
 
     // when animating 0 -> 1: do nothing until delay, then animate quickly from delay to 1
     // when animating 1 -> 0: animate quickly 1 to delay, then do nothing from delay to 0
-    var delay: CGFloat
+    var delay: CGFloat = 0
 
     var animatableData: CGFloat {
         get { t }
@@ -36,8 +36,8 @@ struct IndentableRect: Shape {
         let yCurve = t * 15
         let indentWidth = 60.0
 
-        let indentPath = NormalizedPath(rect: CGRect(
-            x: rect.midX - indentWidth/2,
+        let indentPath = TranslatedPath(rect: CGRect(
+            x: (indentX != nil ? indentX! : rect.midX) - indentWidth/2,
             y: rect.minY,
             width: indentWidth,
             height: yCurve)
@@ -54,7 +54,7 @@ struct IndentableRect: Shape {
     }
 }
 
-struct NormalizedPath {
+struct TranslatedPath {
 
     // svg path
     // M 0 0
@@ -66,25 +66,63 @@ struct NormalizedPath {
 
     let rect: CGRect
 
-    func normalize(x: CGFloat, y: CGFloat) -> CGPoint {
+    func translate(x: CGFloat, y: CGFloat) -> CGPoint {
         CGPoint(x: x / maxX * rect.width + rect.minX, y: y / maxY * rect.height + rect.minY)
     }
 
     func path() -> Path {
 
-        let t1 = normalize(x: 0, y: 0)
-        let t2 = normalize(x: 27.5, y: 17)
-        let t3 = normalize(x: 55, y: 0)
+        let t1 = translate(x: 0, y: 0)
+        let t2 = translate(x: 27.5, y: 17)
+        let t3 = translate(x: 55, y: 0)
 
-        let c1 = normalize(x: 11.5, y: 0)
-        let c2 = normalize(x: 19.5, y: 17)
-        let c3 = normalize(x: 35.5, y: 17)
-        let c4 = normalize(x: 43.5, y: 0)
+        let c1 = translate(x: 11.5, y: 0)
+        let c2 = translate(x: 19.5, y: 17)
+        let c3 = translate(x: 35.5, y: 17)
+        let c4 = translate(x: 43.5, y: 0)
 
         var path = Path()
         path.move(to: t1)
         path.addCurve(to: t2, control1: c1, control2: c2)
         path.addCurve(to: t3, control1: c3, control2: c4)
+        return path
+    }
+}
+
+struct SlidingIndentRect: Shape {
+
+    var t: CGFloat
+
+    var indentX: CGFloat
+    var prevIndentX: CGFloat
+
+    var animatableData: CGFloat {
+        get { t }
+        set { t = newValue }
+    }
+
+    func path(in rect: CGRect) -> Path {
+        let tl = rect.origin
+        let tr = CGPoint(x: rect.maxX, y: rect.minY)
+        let bl = CGPoint(x: rect.minX, y: rect.maxY)
+        let br = CGPoint(x: rect.maxX, y: rect.maxY)
+
+        let indentWidth = 60.0
+
+        let indentPath = TranslatedPath(rect: CGRect(
+            x: prevIndentX + (indentX - prevIndentX) * t - indentWidth/2,
+            y: rect.minY,
+            width: indentWidth,
+            height: 15)
+        ).path()
+
+        var path = Path()
+        path.move(to: tl)
+        path.addPath(indentPath)
+        path.addLine(to: tr)
+        path.addLine(to: br)
+        path.addLine(to: bl)
+        path.addLine(to: tl)
         return path
     }
 }

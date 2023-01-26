@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct WiggleButton: View, Animatable {
+public struct WiggleButton: View {
 
     public var image: Image
     public var maskImage: Image
