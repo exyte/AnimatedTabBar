@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct DropletButtonInterpolator: View {
+public struct DropletButton: View {
 
     public var imageName: String
     public var dropletColor: Color
@@ -22,7 +22,7 @@ public struct DropletButtonInterpolator: View {
     @State var t: CGFloat = 0
 
     public var body: some View {
-        DropletButton(imageName: imageName, dropletColor: dropletColor, t: t)
+        DropletButtonAnimatable(imageName: imageName, dropletColor: dropletColor, t: t)
             .onChange(of: isSelected) { newValue in
                 if newValue {
                     withAnimation(.linear(duration: 0.9)) {
@@ -35,7 +35,7 @@ public struct DropletButtonInterpolator: View {
     }
 }
 
-public struct DropletButton: View, Animatable {
+struct DropletButtonAnimatable: View, Animatable {
 
     var imageName: String
     var dropletColor: Color

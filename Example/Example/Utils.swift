@@ -21,5 +21,6 @@ extension Color {
     }
 
     static var exampleGrey = Color(hex: "0C0C0C")
+    static var exampleLightGrey = Color(hex: "#B1B1B1")
     static var examplePurple = Color(hex: "7D26FE")
 }

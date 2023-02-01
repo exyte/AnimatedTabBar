@@ -11,26 +11,30 @@ import AnimatedTabBar
 struct ContentView: View {
 
     @State private var selectedIndex = 0
+    @State private var prevSelectedIndex = 0
 
-    let names = ["heart", "leaf", "drop", "circle"]
+    let names = ["heart", "leaf", "drop", "circle", "book"]
 
     var body: some View {
         ZStack(alignment: .bottom) {
             Color.examplePurple.edgesIgnoringSafeArea(.all)
 
             VStack(spacing: 50) {
-                AnimatedTabBar(selectedIndex: $selectedIndex,
-                               views: (0..<names.count).map { Image(systemName: names[$0]) })
+                AnimatedTabBar(selectedIndex: $selectedIndex) {
+                    colorButtonAt(0, type: .bell)
+                    colorButtonAt(1, type: .bell)
+                    colorButtonAt(2, type: .plus)
+                    colorButtonAt(3, type: .calendar)
+                    colorButtonAt(4, type: .gear)
+                }
                 .cornerRadius(16)
-                .selectedColor(.examplePurple)
-                .unselectedColor(.examplePurple.opacity(0.3))
+                .selectedColor(.exampleGrey)
+                .unselectedColor(.exampleLightGrey)
                 .ballColor(.white)
                 .verticalPadding(30)
                 .ballTrajectory(.straight)
                 .ballAnimation(.interpolatingSpring(stiffness: 130, damping: 15))
                 .indentAnimation(.easeOut(duration: 0.3))
-                .frame(maxWidth: .infinity)
-                .padding(8)
                 
                 AnimatedTabBar(selectedIndex: $selectedIndex,
                                views: (0..<5).map { dropletButtonAt($0) })
@@ -39,30 +43,40 @@ struct ContentView: View {
                 .unselectedColor(.exampleGrey.opacity(0.3))
                 .ballColor(.white)
                 .verticalPadding(15)
-                .frame(maxWidth: .infinity)
-                .padding(8)
 
                 AnimatedTabBar(selectedIndex: $selectedIndex,
-                               views: (0..<names.count).map { buttonAt($0, name: names[$0]) })
+                               views: (0..<names.count).map { wiggleButtonAt($0, name: names[$0]) })
                 .cornerRadius(16)
                 .selectedColor(.examplePurple)
                 .unselectedColor(.examplePurple.opacity(0.3))
                 .ballColor(.white)
                 .verticalPadding(30)
-                .frame(maxWidth: .infinity)
-                .padding(8)
-
+                .ballTrajectory(.teleport)
             }
+            .frame(maxWidth: .infinity)
+            .padding(8)
+        }
+        .onChange(of: selectedIndex) { [selectedIndex] _ in
+            prevSelectedIndex = selectedIndex
         }
     }
 
-    func buttonAt(_ index: Int, name: String) -> some View {
-        WiggleButton(image: Image(systemName: name), maskImage: Image(systemName: "\(name).fill"), isSelected: selectedIndex == index)
-            .scaleEffect(1.3)
+    func colorButtonAt(_ index: Int, type: ColorButton.AnimationType) -> some View {
+        ColorButton(
+            image: Image("colorTab\(index+1)"),
+            colorImage: Image("colorTab\(index+1)Bg"),
+            isSelected: selectedIndex == index,
+            fromLeft: prevSelectedIndex < index,
+            toLeft: selectedIndex < index,
+            animationType: type)
     }
 
     func dropletButtonAt(_ index: Int) -> some View {
-        DropletButtonInterpolator(imageName: "tab\(index+1)", dropletColor: .examplePurple, isSelected: selectedIndex == index)
-            .id(index)
+        DropletButton(imageName: "tab\(index+1)", dropletColor: .examplePurple, isSelected: selectedIndex == index)
+    }
+
+    func wiggleButtonAt(_ index: Int, name: String) -> some View {
+        WiggleButton(image: Image(systemName: name), maskImage: Image(systemName: "\(name).fill"), isSelected: selectedIndex == index)
+            .scaleEffect(1.2)
     }
 }

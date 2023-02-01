@@ -11,6 +11,7 @@ public struct AnimatedTabBar: View {
 
     public enum BallTrajectory {
         case parabolic
+        case teleport
         case straight
     }
 
@@ -113,6 +114,14 @@ public struct AnimatedTabBar: View {
                     )
                 )
 
+        case .teleport:
+            Circle()
+                .frame(width: circleSize, height: circleSize)
+                .foregroundColor(ballColor)
+                .fixedSize()
+                .teleportEffect(t: tBall, from: getBallCoord(prevSelectedIndex).x, to: getBallCoord(selectedIndex).x)
+                .offset(y: 15)
+
         case .straight:
             Circle()
                 .frame(width: circleSize, height: circleSize)
@@ -126,7 +135,7 @@ public struct AnimatedTabBar: View {
     @ViewBuilder
     var background: some View {
         switch ballTrajectory {
-        case .parabolic:
+        case .parabolic, .teleport:
             HStack(spacing: 0) {
                 ForEach(0..<views.count, id: \.self) { i in
                     IndentableRect(t: selectedIndex == i ? 1 : 0, delay: 0.7)
