@@ -31,7 +31,7 @@ struct ContentView: View {
                 .selectedColor(.exampleGrey)
                 .unselectedColor(.exampleLightGrey)
                 .ballColor(.white)
-                .verticalPadding(30)
+                .verticalPadding(20)
                 .ballTrajectory(.straight)
                 .ballAnimation(.interpolatingSpring(stiffness: 130, damping: 15))
                 .indentAnimation(.easeOut(duration: 0.3))
@@ -50,7 +50,7 @@ struct ContentView: View {
                 .selectedColor(.examplePurple)
                 .unselectedColor(.examplePurple.opacity(0.3))
                 .ballColor(.white)
-                .verticalPadding(30)
+                .verticalPadding(28)
                 .ballTrajectory(.teleport)
             }
             .frame(maxWidth: .infinity)

@@ -49,6 +49,11 @@ public struct WiggleButton: View {
                 }
             }
         }
+        .onAppear {
+            if isSelected {
+                t = 1
+            }
+        }
     }
 }
 

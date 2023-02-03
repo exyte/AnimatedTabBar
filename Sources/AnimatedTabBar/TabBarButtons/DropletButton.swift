@@ -32,6 +32,11 @@ public struct DropletButton: View {
                     t = 0
                 }
             }
+            .onAppear {
+                if isSelected {
+                    t = 1
+                }
+            }
     }
 }
 

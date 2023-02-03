@@ -46,6 +46,11 @@ public struct ColorButton: View {
             }
         }
         .padding(8)
+        .onAppear {
+            if isSelected {
+                tForBg = 1
+            }
+        }
         .onChange(of: isSelected) { newValue in
             if newValue {
                 withAnimation(.interpolatingSpring(stiffness: 300, damping: 10).delay(0.15)) {
