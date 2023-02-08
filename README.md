@@ -1,30 +1,5 @@
-<img src="https://raw.githubusercontent.com/exyte/media/master/common/header.png">
-<table>
-    <thead>
-        <tr>
-            <th>Floaters</th>
-            <th>Toasts</th>
-            <th>Popups</th>
-            <th>Sheets</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-                <img src="https://raw.githubusercontent.com/exyte/media/master/AnimatedTabBar/1.gif" />
-            </td>
-            <td>
-                <img src="https://raw.githubusercontent.com/exyte/media/master/AnimatedTabBar/2.gif" />
-            </td>
-            <td>
-                <img src="https://raw.githubusercontent.com/exyte/media/master/AnimatedTabBar/3.gif" />
-            </td>
-            <td>
-                <img src="https://raw.githubusercontent.com/exyte/media/master/AnimatedTabBar/4.gif" />
-            </td>
-        </tr>
-    </tbody>
-</table>
+![header](https://user-images.githubusercontent.com/9447630/217482844-e5f420cf-7aa2-4684-8238-54064bbb23ba.png)
+![demo](https://user-images.githubusercontent.com/9447630/217482148-8594b3ce-e6be-4e84-a65d-29915566a61a.gif)
 
 <p><h1 align="left">Animated Tab Bar</h1></p>
 
@@ -49,7 +24,7 @@ ___
 
 # Usage
 1. Add an `Int` to store current selection    
-2. Pass your buttons to AnimatedTabBar using one of 2 constructors. For this one you can pass any view types:  
+2. Pass your buttons to AnimatedTabBar using one of 2 constructors. For the first one you can pass any view types:  
 ```swift
 import AnimatedTabBar
 
@@ -59,7 +34,7 @@ AnimatedTabBar(selectedIndex: $selectedIndex) {
     TabButton3()
 }
 ```
-Views for this one must have the same type, or manually converted to any view
+For the second one views must have the same type, or be manually converted to `AnyView`
 ```swift
 AnimatedTabBar(selectedIndex: $selectedIndex, views: [TabButton1(), TabButton2(), TabButton3()])
 ```
@@ -83,6 +58,7 @@ use `customize` closure in popup modifier:
 
 `ballTrajectory` - Options for ball indicator animation paths:     
 - `parabolic`  - Jump to selected button following a parabolic arc     
+- `teleport` - Disappear and quickly re-appear above selected tab
 - `straight` - Slide to selected tab        
 
 ### Built-in animatable tab buttons
