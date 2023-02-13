@@ -101,8 +101,8 @@ github "Exyte/AnimatedTabBar"
 
 ## Requirements
 
-* iOS 14+
-* Xcode 12+ 
+* iOS 16+
+* Xcode 14+ 
 
 ## Acknowledgements
 
