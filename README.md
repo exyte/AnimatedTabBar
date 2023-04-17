@@ -23,8 +23,8 @@ ___
 [![Platform](https://img.shields.io/cocoapods/p/ExyteAnimatedTabBar.svg?style=flat)](http://cocoapods.org/pods/ExyteAnimatedTabBar)
 
 # Usage
-1. Add an `Int` to store current selection    
-2. Pass your buttons to AnimatedTabBar using one of 2 constructors. For the first one you can pass any view types:  
+1. Add an `Int` to store the current selection    
+2. Pass your buttons to the AnimatedTabBar using one of 2 initializers. For the first one you can pass any view type:  
 ```swift
 import AnimatedTabBar
 
@@ -34,43 +34,44 @@ AnimatedTabBar(selectedIndex: $selectedIndex) {
     TabButton3()
 }
 ```
-For the second one views must have the same type, or be manually converted to `AnyView`
+
+For the second one the views must have the same type, or be manually converted to `AnyView`
 ```swift
 AnimatedTabBar(selectedIndex: $selectedIndex, views: [TabButton1(), TabButton2(), TabButton3()])
 ```
 
 ### Required parameters 
-`selectedIndex` - binding to current index     
-`views` - buttons to display in a tabbar  
+`selectedIndex` - binding to the current index     
+`views` - buttons to display in the tabbar  
 
 ### Available customizations - modifiers
-use `customize` closure in popup modifier:
+use the `customize` closure in the popup modifier:
 
 `barColor` - Color of the tabbar itself
 `selectedColor` - Selected tab color (use template rendering for this color to be applied properly)    
 `unselectedColor` - Unselected tab color     
 `ballColor` - Ball indicator color    
-`verticalPadding` - Space from buttons to bar's top and bottom edges    
-`cornerRadius` - Applied to tabbar background color     
-`ballAnimation` - Default is .easeOut(duration: 0.6): Animation curve to apply to ball motion   
+`verticalPadding` - Space from the buttons to the bar's top and bottom edges    
+`cornerRadius` - The corner radius applied to the tabbar background color     
+`ballAnimation` - Animation curve to apply to ball motion, default is .easeOut(duration: 0.6)
 `indentAnimation` - Animation curve for growing/shrinking of the indent in the tabbar       
 `buttonsAnimation` - Animation curve for applying color to tab buttons    
 
 `ballTrajectory` - Options for ball indicator animation paths:     
-- `parabolic`  - Jump to selected button following a parabolic arc     
+- `parabolic`  - Jump to the selected button following a parabolic arc     
 - `teleport` - Disappear and quickly re-appear above selected tab
-- `straight` - Slide to selected tab        
+- `straight` - Slide to the selected tab        
 
 ### Built-in animatable tab buttons
-By default tabs only have a simple animation of color, but you can customize that. This library has two built-in button types you can use out-of-the-box: `DropletButton` and `WiggleButton`, and a super custom `ColorButton` type in Example project. Please feel free to use them in your projects or build your own buttons on top of them.
+By default tabs only have a simple color animation, but you can customize that. This library has two built-in button types you can use out-of-the-box: `DropletButton` and `WiggleButton`, and a super custom `ColorButton` type in the Example project. Please feel free to use them in your projects or build your own buttons on top of them.
 
 ## Examples
 
-To try AnimatedTabBar examples:
+To try the AnimatedTabBar examples:
 - Clone the repo `https://github.com/exyte/AnimatedTabBar.git`
 - Open terminal and run `cd <AnimatedTabBarRepo>/Example/`
 - Run `pod install` to install all dependencies
-- Run open `AnimatedTabBarExample.xcworkspace/` to open project in the Xcode
+- Run `open AnimatedTabBarExample.xcworkspace/` to open the project in Xcode
 - Try it!
 
 ## Installation
