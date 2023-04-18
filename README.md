@@ -3,7 +3,7 @@
 
 <p><h1 align="left">Animated Tab Bar</h1></p>
 
-<p><h4>AnimatedTabBar is a tabbar with number of preset animations written in pure SwiftUI</h4></p>
+<p><h4>AnimatedTabBar is a tabbar with a number of preset animations written in pure SwiftUI</h4></p>
 
 ___
 
