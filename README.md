@@ -47,7 +47,7 @@ AnimatedTabBar(selectedIndex: $selectedIndex, views: [TabButton1(), TabButton2()
 ### Available customizations - modifiers
 use the `customize` closure in the popup modifier:
 
-`barColor` - Color of the tabbar itself
+`barColor` - Color of the tabbar itself      
 `selectedColor` - Selected tab color (use template rendering for this color to be applied properly)    
 `unselectedColor` - Unselected tab color     
 `ballColor` - Ball indicator color    
