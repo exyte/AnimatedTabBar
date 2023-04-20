@@ -17,10 +17,12 @@ ___
 </br></br>
 
 [![Twitter](https://img.shields.io/badge/Twitter-@exyteHQ-blue.svg?style=flat)](http://twitter.com/exyteHQ)
-[![Version](https://img.shields.io/cocoapods/v/ExyteAnimatedTabBar.svg?style=flat)](http://cocoapods.org/pods/ExyteAnimatedTabBar)
-[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-0473B3.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![License](https://img.shields.io/cocoapods/l/ExyteAnimatedTabBar.svg?style=flat)](http://cocoapods.org/pods/ExyteAnimatedTabBar)
-[![Platform](https://img.shields.io/cocoapods/p/ExyteAnimatedTabBar.svg?style=flat)](http://cocoapods.org/pods/ExyteAnimatedTabBar)
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fexyte%2FAnimatedTabBar%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/exyte/AnimatedTabBar)
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fexyte%2FAnimatedTabBar%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/exyte/AnimatedTabBar)
+[![SPM Compatible](https://img.shields.io/badge/SwiftPM-Compatible-brightgreen.svg)](https://swiftpackageindex.com/exyte/AnimatedTabBar)
+[![Cocoapods Compatible](https://img.shields.io/badge/cocoapods-Compatible-brightgreen.svg)](https://cocoapods.org/pods/ExyteAnimatedTabBar)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-brightgreen.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](https://opensource.org/licenses/MIT)
 
 # Usage
 1. Add an `Int` to store the current selection    
@@ -114,6 +116,7 @@ Many thanks to [Yeasin Arafat](https://dribbble.com/shots/14883627-Tab-Bar-Anima
 [Grid](https://github.com/exyte/Grid) - The most powerful Grid container    
 [ScalingHeaderScrollView](https://github.com/exyte/ScalingHeaderScrollView) - A scroll view with a sticky header which shrinks as you scroll.    
 [MediaPicker](https://github.com/exyte/mediapicker) - Customizable media picker     
+[Chat](https://github.com/exyte/chat) - Chat UI framework with fully customizable message cells, input view, and a built-in media picker    
 [ConcentricOnboarding](https://github.com/exyte/ConcentricOnboarding) - Animated onboarding flow    
 [FloatingButton](https://github.com/exyte/FloatingButton) - Floating button menu    
 [ActivityIndicatorView](https://github.com/exyte/ActivityIndicatorView) - A number of animated loading indicators    
