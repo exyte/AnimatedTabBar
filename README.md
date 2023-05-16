@@ -12,6 +12,7 @@ ___
 
 <a href="https://exyte.com/contacts"><img src="https://i.imgur.com/vGjsQPt.png" width="134" height="34"></a> <a href="https://twitter.com/exyteHQ"><img src="https://i.imgur.com/DngwSn1.png" width="165" height="34"></a>
 
+![](https://img.shields.io/github/v/tag/exyte/popupView?label=Version)
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fexyte%2FAnimatedTabBar%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/exyte/AnimatedTabBar)
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fexyte%2FAnimatedTabBar%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/exyte/AnimatedTabBar)
 [![SPM Compatible](https://img.shields.io/badge/SwiftPM-Compatible-brightgreen.svg)](https://swiftpackageindex.com/exyte/AnimatedTabBar)
@@ -53,6 +54,7 @@ use the `customize` closure in the popup modifier:
 `ballAnimation` - Animation curve to apply to ball motion, default is .easeOut(duration: 0.6)
 `indentAnimation` - Animation curve for growing/shrinking of the indent in the tabbar       
 `buttonsAnimation` - Animation curve for applying color to tab buttons    
+`didSelectIndex` - Closure which gets called on every tab tap    
 
 `ballTrajectory` - Options for ball indicator animation paths:     
 - `parabolic`  - Jump to the selected button following a parabolic arc     

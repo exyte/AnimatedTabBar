@@ -47,6 +47,8 @@ public struct AnimatedTabBar: View {
     private var buttonsAnimation: Animation = .easeOut(duration: 0.6)
     private var ballTrajectory: BallTrajectory = .parabolic
 
+    private var didSelectIndex: ((Int)->())?
+
     // MARK: - Properties
 
     @State private var prevSelectedIndex = 0
@@ -71,6 +73,7 @@ public struct AnimatedTabBar: View {
                     ForEach(0..<views.count, id: \.self) { i in
                         views[i].onTapGesture {
                             selectedIndex = i
+                            didSelectIndex?(i)
                         }
                         .foregroundColor(selectedIndex == i ? selectedColor : unselectedColor)
                         .animation(buttonsAnimation, value: selectedIndex)
@@ -235,6 +238,12 @@ public struct AnimatedTabBar: View {
     public func ballTrajectory(_ ballTrajectory: BallTrajectory) -> AnimatedTabBar {
         var switcher = self
         switcher.ballTrajectory = ballTrajectory
+        return switcher
+    }
+
+    public func didSelectIndex(_ closure: @escaping (Int)->()) -> AnimatedTabBar {
+        var switcher = self
+        switcher.didSelectIndex = closure
         return switcher
     }
 }
