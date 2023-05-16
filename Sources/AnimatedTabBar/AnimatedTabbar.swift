@@ -21,12 +21,14 @@ public struct AnimatedTabBar: View {
     public init<Views>(selectedIndex: Binding<Int>,
                 @ViewBuilder content: @escaping () -> TupleView<Views>) {
         self._selectedIndex = selectedIndex
+        self.prevSelectedIndex = selectedIndex.wrappedValue
         self.views = content().getViews
     }
 
     public init<Content: View>(selectedIndex: Binding<Int>,
                                views: [Content]) {
         self._selectedIndex = selectedIndex
+        self.prevSelectedIndex = selectedIndex.wrappedValue
         self.views = views.map { AnyView($0) }
     }
 
