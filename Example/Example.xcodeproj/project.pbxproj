@@ -7,17 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B1F0C432A39AD49004FCA22 /* ExampleWiggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1F0C422A39AD49004FCA22 /* ExampleWiggleButton.swift */; };
 		5B952DFC297E50DF003897E7 /* ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B952DFB297E50DF003897E7 /* ExampleApp.swift */; };
 		5B952DFE297E50DF003897E7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B952DFD297E50DF003897E7 /* ContentView.swift */; };
 		5B952E00297E50E0003897E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B952DFF297E50E0003897E7 /* Assets.xcassets */; };
 		5B952E03297E50E0003897E7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B952E02297E50E0003897E7 /* Preview Assets.xcassets */; };
 		5B952E2D297E5A2D003897E7 /* AnimatedTabBar in Frameworks */ = {isa = PBXBuildFile; productRef = 5B952E2C297E5A2D003897E7 /* AnimatedTabBar */; };
 		5B952E31297E5AA6003897E7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B952E30297E5AA6003897E7 /* Utils.swift */; };
-		5BE4006F2983A5F5009423A4 /* ExampleButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE4006E2983A5F5009423A4 /* ExampleButtons.swift */; };
+		5BE4006F2983A5F5009423A4 /* ExampleColorButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE4006E2983A5F5009423A4 /* ExampleColorButtons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5B03324B2987B7B80058FC9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5B1F0C422A39AD49004FCA22 /* ExampleWiggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleWiggleButton.swift; sourceTree = "<group>"; };
 		5B952DF8297E50DF003897E7 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B952DFB297E50DF003897E7 /* ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleApp.swift; sourceTree = "<group>"; };
 		5B952DFD297E50DF003897E7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -25,7 +27,7 @@
 		5B952E02297E50E0003897E7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5B952E2A297E5953003897E7 /* AnimatedTabBar */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AnimatedTabBar; path = ..; sourceTree = "<group>"; };
 		5B952E30297E5AA6003897E7 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		5BE4006E2983A5F5009423A4 /* ExampleButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleButtons.swift; sourceTree = "<group>"; };
+		5BE4006E2983A5F5009423A4 /* ExampleColorButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleColorButtons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +66,8 @@
 				5B952DFB297E50DF003897E7 /* ExampleApp.swift */,
 				5B952E30297E5AA6003897E7 /* Utils.swift */,
 				5B952DFD297E50DF003897E7 /* ContentView.swift */,
-				5BE4006E2983A5F5009423A4 /* ExampleButtons.swift */,
+				5BE4006E2983A5F5009423A4 /* ExampleColorButtons.swift */,
+				5B1F0C422A39AD49004FCA22 /* ExampleWiggleButton.swift */,
 				5B952DFF297E50E0003897E7 /* Assets.xcassets */,
 				5B952E01297E50E0003897E7 /* Preview Content */,
 			);
@@ -160,9 +163,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B1F0C432A39AD49004FCA22 /* ExampleWiggleButton.swift in Sources */,
 				5B952DFE297E50DF003897E7 /* ContentView.swift in Sources */,
 				5B952DFC297E50DF003897E7 /* ExampleApp.swift in Sources */,
-				5BE4006F2983A5F5009423A4 /* ExampleButtons.swift in Sources */,
+				5BE4006F2983A5F5009423A4 /* ExampleColorButtons.swift in Sources */,
 				5B952E31297E5AA6003897E7 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,7 +224,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -274,7 +278,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

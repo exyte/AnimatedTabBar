@@ -15,6 +15,10 @@ struct ContentView: View {
 
     let names = ["heart", "leaf", "drop", "circle", "book"]
 
+    // a hack for keyframe animation
+    @State var time = 0.0
+    let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
+
     var body: some View {
         ZStack(alignment: .bottom) {
             Color.examplePurple.edgesIgnoringSafeArea(.all)
@@ -35,7 +39,7 @@ struct ContentView: View {
                 .ballTrajectory(.straight)
                 .ballAnimation(.interpolatingSpring(stiffness: 130, damping: 15))
                 .indentAnimation(.easeOut(duration: 0.3))
-                
+
                 AnimatedTabBar(selectedIndex: $selectedIndex,
                                views: (0..<5).map { dropletButtonAt($0) })
                 .cornerRadius(16)
@@ -56,8 +60,12 @@ struct ContentView: View {
             .frame(maxWidth: .infinity)
             .padding(8)
         }
-        .onChange(of: selectedIndex) { [selectedIndex] _ in
-            prevSelectedIndex = selectedIndex
+        .onChange(of: selectedIndex) { oldValue, _ in
+            prevSelectedIndex = oldValue
+        }
+        // a hack for keyframe animation
+        .onReceive(timer) { input in
+            time = Date().timeIntervalSince1970
         }
     }
 
@@ -76,7 +84,7 @@ struct ContentView: View {
     }
 
     func wiggleButtonAt(_ index: Int, name: String) -> some View {
-        WiggleButton(image: Image(systemName: name), maskImage: Image(systemName: "\(name).fill"), isSelected: selectedIndex == index)
+        KeyframeWiggleButton(isSelected: index == selectedIndex, image: Image(systemName: name), maskImage: Image(systemName: "\(name).fill"))
             .scaleEffect(1.2)
     }
 }

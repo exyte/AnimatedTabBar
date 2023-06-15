@@ -52,7 +52,7 @@ struct TeleportEffect: GeometryEffect {
         if t > 1 - fraction { // 0.9...1 -> 0...1
             return (t - (1-fraction)) * 1/fraction
         }
-        return 0
+        return -5000
     }
 
     var anchor: CGFloat {
