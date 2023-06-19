@@ -16,19 +16,24 @@ public struct AnimatedTabBar: View {
     }
 
     @Binding private var selectedIndex: Int
+    @Binding private var prevSelectedIndex: Int
     private let views: [AnyView]
 
     public init<Views>(selectedIndex: Binding<Int>,
-                @ViewBuilder content: @escaping () -> TupleView<Views>) {
+                       prevSelectedIndex: Binding<Int>? = nil,
+                       @ViewBuilder content: @escaping () -> TupleView<Views>) {
         self._selectedIndex = selectedIndex
-        self.prevSelectedIndex = selectedIndex.wrappedValue
+        self._prevSelectedIndex = prevSelectedIndex ?? .constant(0)
+        self.internalPrevSelectedIndex = selectedIndex.wrappedValue
         self.views = content().getViews
     }
 
     public init<Content: View>(selectedIndex: Binding<Int>,
+                               prevSelectedIndex: Binding<Int>? = nil,
                                views: [Content]) {
         self._selectedIndex = selectedIndex
-        self.prevSelectedIndex = selectedIndex.wrappedValue
+        self._prevSelectedIndex = prevSelectedIndex ?? .constant(0)
+        self.internalPrevSelectedIndex = selectedIndex.wrappedValue
         self.views = views.map { AnyView($0) }
     }
 
@@ -51,10 +56,10 @@ public struct AnimatedTabBar: View {
 
     // MARK: - Properties
 
-    @State private var prevSelectedIndex = 0
     @State private var frames: [CGRect] = []
     @State private var tBall: CGFloat = 0
     @State private var tIndent: CGFloat = 0
+    @State private var internalPrevSelectedIndex: Int
 
     private let circleSize = 10.0
 
@@ -71,13 +76,22 @@ public struct AnimatedTabBar: View {
 
                 ButtonsBar {
                     ForEach(0..<views.count, id: \.self) { i in
-                        views[i].onTapGesture {
+                        let view = views[i].onTapGesture {
+                            prevSelectedIndex = selectedIndex
                             selectedIndex = i
                             didSelectIndex?(i)
                         }
-                        .foregroundColor(selectedIndex == i ? selectedColor : unselectedColor)
-                        .animation(buttonsAnimation, value: selectedIndex)
                         .background(ButtonPreferenceViewSetter())
+
+                        if #available(iOS 17.0, *) {
+                            view.animation(.linear) {
+                                $0.foregroundStyle(selectedIndex == i ? selectedColor : unselectedColor)
+                            }
+                        } else {
+                            view
+                                .foregroundStyle(selectedIndex == i ? selectedColor : unselectedColor)
+                                .animation(buttonsAnimation, value: selectedIndex)
+                        }
                     }
                 }
                 .coordinateSpace(name: buttonsBarSpace)
@@ -89,7 +103,7 @@ public struct AnimatedTabBar: View {
             .fixedSize(horizontal: false, vertical: true)
         }
         .onChange(of: selectedIndex) { [selectedIndex] newValue in
-            prevSelectedIndex = selectedIndex
+            internalPrevSelectedIndex = selectedIndex
             tBall = 0
             tIndent = 0
             DispatchQueue.main.async {
@@ -114,7 +128,7 @@ public struct AnimatedTabBar: View {
                 .alongPath(
                     t: tBall,
                     trajectory: trajectory(
-                        from: getBallCoord(prevSelectedIndex),
+                        from: getBallCoord(internalPrevSelectedIndex),
                         to: getBallCoord(selectedIndex)
                     )
                 )
@@ -124,7 +138,7 @@ public struct AnimatedTabBar: View {
                 .frame(width: circleSize, height: circleSize)
                 .foregroundColor(ballColor)
                 .fixedSize()
-                .teleportEffect(t: tBall, from: getBallCoord(prevSelectedIndex).x, to: getBallCoord(selectedIndex).x)
+                .teleportEffect(t: tBall, from: getBallCoord(internalPrevSelectedIndex).x, to: getBallCoord(selectedIndex).x)
                 .offset(y: 15)
 
         case .straight:
@@ -150,7 +164,7 @@ public struct AnimatedTabBar: View {
             }
 
         case .straight:
-            SlidingIndentRect(t: tIndent, indentX: getCoord(selectedIndex).x, prevIndentX: getCoord(prevSelectedIndex).x)
+            SlidingIndentRect(t: tIndent, indentX: getCoord(selectedIndex).x, prevIndentX: getCoord(internalPrevSelectedIndex).x)
                 .foregroundColor(barColor)
         }
     }

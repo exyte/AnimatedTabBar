@@ -8,6 +8,12 @@
 import SwiftUI
 import AnimatedTabBar
 
+
+struct CircleValues {
+    var scale = 1.0
+    var offset = 1.3
+}
+
 struct ContentView: View {
 
     @State private var selectedIndex = 0
@@ -20,11 +26,23 @@ struct ContentView: View {
     let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
 
     var body: some View {
+        if #available(iOS 17.0, *) {
+            tabbars()
+            // a hack for keyframe animation
+                .onReceive(timer) { input in
+                    time = Date().timeIntervalSince1970
+                }
+        } else {
+            tabbars()
+        }
+    }
+
+    func tabbars() -> some View {
         ZStack(alignment: .bottom) {
             Color.examplePurple.edgesIgnoringSafeArea(.all)
 
             VStack(spacing: 50) {
-                AnimatedTabBar(selectedIndex: $selectedIndex) {
+                AnimatedTabBar(selectedIndex: $selectedIndex, prevSelectedIndex: $prevSelectedIndex) {
                     colorButtonAt(0, type: .bell)
                     colorButtonAt(1, type: .bell)
                     colorButtonAt(2, type: .plus)
@@ -56,16 +74,20 @@ struct ContentView: View {
                 .ballColor(.white)
                 .verticalPadding(28)
                 .ballTrajectory(.teleport)
+
+                if #available(iOS 17.0, *) {
+                    AnimatedTabBar(selectedIndex: $selectedIndex,
+                                   views: (0..<names.count).map { keyframeWiggleButtonAt($0, name: names[$0]) })
+                    .cornerRadius(16)
+                    .selectedColor(.examplePurple)
+                    .unselectedColor(.examplePurple.opacity(0.3))
+                    .ballColor(.white)
+                    .verticalPadding(28)
+                    .ballTrajectory(.teleport)
+                }
             }
             .frame(maxWidth: .infinity)
             .padding(8)
-        }
-        .onChange(of: selectedIndex) { oldValue, _ in
-            prevSelectedIndex = oldValue
-        }
-        // a hack for keyframe animation
-        .onReceive(timer) { input in
-            time = Date().timeIntervalSince1970
         }
     }
 
@@ -84,7 +106,13 @@ struct ContentView: View {
     }
 
     func wiggleButtonAt(_ index: Int, name: String) -> some View {
-        KeyframeWiggleButton(isSelected: index == selectedIndex, image: Image(systemName: name), maskImage: Image(systemName: "\(name).fill"))
+        WiggleButton(image: Image(systemName: name), maskImage: Image(systemName: "\(name).fill"), isSelected: index == selectedIndex)
+            .scaleEffect(1.2)
+    }
+
+    @available(iOS 17.0, *)
+    func keyframeWiggleButtonAt(_ index: Int, name: String) -> some View {
+        KeyframeWiggleButton(image: Image(systemName: name), maskImage: Image(systemName: "\(name).fill"), isSelected: index == selectedIndex)
             .scaleEffect(1.2)
     }
 }

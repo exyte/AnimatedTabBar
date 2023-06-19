@@ -8,48 +8,54 @@
 import SwiftUI
 
 struct AnimationValues {
-    var scale = 1.0
+    var growingScale = 1.0
+    var shrinkingScale = 1.3
     var bgWiggle = 0.0
 }
 
+@available(iOS 17.0, *)
 public struct KeyframeWiggleButton: View {
 
-    public var isSelected: Bool
     public var image: Image
     public var maskImage: Image
+    public var isSelected: Bool
 
-    @State var growTrigger = false
-    @State var trigger = false
+    @State private var isGrowing = true
 
     public var body: some View {
         image
-            .keyframeAnimator(initialValue: AnimationValues(), trigger: growTrigger) { content, value in
+            .keyframeAnimator(initialValue: AnimationValues(), trigger: isSelected) { content, value in
                 ZStack {
-                    KeyframeWiggleButtonBg(t: value.bgWiggle)
+                    KeyframeWiggleButtonBg(t: isGrowing ? value.bgWiggle : 0)
                         .opacity(0.4)
                         .mask(maskImage)
                     content
                 }
-                .scaleEffect(value.scale)
+                .scaleEffect(isGrowing ? value.growingScale : value.shrinkingScale)
             } keyframes: { _ in
-                KeyframeTrack(\.scale) {
-                    CubicKeyframe(1.2, duration: 0.05)
+                KeyframeTrack(\.growingScale) {
                     CubicKeyframe(1.3, duration: 0.1)
-                    CubicKeyframe(1.2, duration: 0.1)
+                    CubicKeyframe(1.4, duration: 0.1)
+                    CubicKeyframe(1.3, duration: 0.1)
                 }
 
                 KeyframeTrack(\.bgWiggle) {
-                    SpringKeyframe(0.0, duration: 0.1)
+                    SpringKeyframe(0.0, duration: 0.05)
+                    SpringKeyframe(3.0, duration: 0.1)
+                    SpringKeyframe(1.0, duration: 0.1)
                     SpringKeyframe(2.0, duration: 0.1)
                     SpringKeyframe(0.0, duration: 0.1)
-                    SpringKeyframe(1.0, duration: 0.1)
-                    SpringKeyframe(0.0, duration: 0.1)
+                }
+
+                KeyframeTrack(\.shrinkingScale) {
+                    SpringKeyframe(0.9, duration: 0.2)
                 }
             }
             .onChange(of: isSelected) { oldValue, newValue in
-                if newValue {
-                    growTrigger.toggle()
-                }
+                isGrowing = newValue
+            }
+            .onAppear {
+                isGrowing = !isSelected
             }
     }
 }
@@ -64,3 +70,4 @@ struct KeyframeWiggleButtonBg: Shape {
         return path
     }
 }
+

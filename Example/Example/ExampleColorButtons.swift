@@ -32,7 +32,7 @@ public struct ColorButton: View {
 
     public var body: some View {
         ZStack {
-            ColorButtonBg(colorImage: colorImage, fromLeft: fromLeft, toLeft: toLeft, t: tForBg)
+            ColorButtonBg(colorImage: colorImage, isSelected: isSelected, fromLeft: fromLeft, toLeft: toLeft, t: tForBg)
                 .offset(x: 3, y: 3)
             switch animationType {
             case .bell:
@@ -151,15 +151,16 @@ struct ColorButtonOutlineGear: View {
 struct ColorButtonBg: View {
 
     var colorImage: Image
+    var isSelected: Bool
     var fromLeft: Bool
     var toLeft: Bool
     var t: CGFloat
 
     var offset: CGFloat {
-        if t == 0 {
-            return toLeft ? (t - 1) * 20 : (t - 1) * -15
+        if isSelected {
+            return fromLeft ? (t - 1) * 20 : (t - 1) * -15
         } else {
-            return fromLeft ? (t - 1) * 20 : (t - 1) * -20
+            return toLeft ? (t - 1) * 20 : (t - 1) * -15
         }
     }
 
