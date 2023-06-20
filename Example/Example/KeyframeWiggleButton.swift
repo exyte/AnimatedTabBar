@@ -13,6 +13,7 @@ struct AnimationValues {
     var bgWiggle = 0.0
 }
 
+#if swift(>=5.8.1)
 @available(iOS 17.0, *)
 public struct KeyframeWiggleButton: View {
 
@@ -71,3 +72,5 @@ struct KeyframeWiggleButtonBg: Shape {
     }
 }
 
+
+#endif

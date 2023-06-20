@@ -75,6 +75,7 @@ struct ContentView: View {
                 .verticalPadding(28)
                 .ballTrajectory(.teleport)
 
+#if swift(>=5.8.1)
                 if #available(iOS 17.0, *) {
                     AnimatedTabBar(selectedIndex: $selectedIndex,
                                    views: (0..<names.count).map { keyframeWiggleButtonAt($0, name: names[$0]) })
@@ -85,6 +86,7 @@ struct ContentView: View {
                     .verticalPadding(28)
                     .ballTrajectory(.teleport)
                 }
+#endif
             }
             .frame(maxWidth: .infinity)
             .padding(8)
@@ -110,9 +112,11 @@ struct ContentView: View {
             .scaleEffect(1.2)
     }
 
+#if swift(>=5.8.1)
     @available(iOS 17.0, *)
     func keyframeWiggleButtonAt(_ index: Int, name: String) -> some View {
         KeyframeWiggleButton(image: Image(systemName: name), maskImage: Image(systemName: "\(name).fill"), isSelected: index == selectedIndex)
             .scaleEffect(1.2)
     }
+#endif
 }
