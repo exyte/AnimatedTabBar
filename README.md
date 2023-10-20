@@ -9,6 +9,9 @@
 
 <p><h4>AnimatedTabBar is a tabbar with a number of preset animations written in pure SwiftUI</h4></p>
 
+ <a href="https://exyte.com/blog/swiftui-animated-tabbar">Read Article »</a>
+</br></br>
+
 ![](https://img.shields.io/github/v/tag/exyte/popupView?label=Version)
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fexyte%2FAnimatedTabBar%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/exyte/AnimatedTabBar)
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fexyte%2FAnimatedTabBar%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/exyte/AnimatedTabBar)
