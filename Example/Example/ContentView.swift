@@ -26,15 +26,17 @@ struct ContentView: View {
     let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
 
     var body: some View {
+#if swift(>=5.8.1)
         if #available(iOS 17.0, *) {
             tabbars()
             // a hack for keyframe animation
                 .onReceive(timer) { input in
                     time = Date().timeIntervalSince1970
                 }
-        } else {
-            tabbars()
         }
+#else
+        tabbars()
+#endif
     }
 
     func tabbars() -> some View {
