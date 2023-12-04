@@ -8,7 +8,6 @@
 import SwiftUI
 import AnimatedTabBar
 
-
 struct CircleValues {
     var scale = 1.0
     var offset = 1.3
@@ -26,7 +25,7 @@ struct ContentView: View {
     let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
 
     var body: some View {
-#if swift(>=5.8.1)
+#if swift(>=5.9)
         if #available(iOS 17.0, *) {
             tabbars()
             // a hack for keyframe animation
@@ -77,7 +76,7 @@ struct ContentView: View {
                 .verticalPadding(28)
                 .ballTrajectory(.teleport)
 
-#if swift(>=5.8.1)
+#if swift(>=5.9)
                 if #available(iOS 17.0, *) {
                     AnimatedTabBar(selectedIndex: $selectedIndex,
                                    views: (0..<names.count).map { keyframeWiggleButtonAt($0, name: names[$0]) })
@@ -114,7 +113,7 @@ struct ContentView: View {
             .scaleEffect(1.2)
     }
 
-#if swift(>=5.8.1)
+#if swift(>=5.9)
     @available(iOS 17.0, *)
     func keyframeWiggleButtonAt(_ index: Int, name: String) -> some View {
         KeyframeWiggleButton(image: Image(systemName: name), maskImage: Image(systemName: "\(name).fill"), isSelected: index == selectedIndex)
