@@ -88,6 +88,10 @@ public struct AnimatedTabBar: View {
                             view.animation(.linear) {
                                 $0.foregroundStyle(selectedIndex == i ? selectedColor : unselectedColor)
                             }
+                        } else {
+                            view
+                            .foregroundStyle(selectedIndex == i ? selectedColor : unselectedColor)
+                            .animation(buttonsAnimation, value: selectedIndex)
                         }
 #else
                         view
