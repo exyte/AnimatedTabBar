@@ -32,6 +32,8 @@ struct ContentView: View {
                 .onReceive(timer) { input in
                     time = Date().timeIntervalSince1970
                 }
+        } else {
+            tabbars()
         }
 #else
         tabbars()
