@@ -110,12 +110,15 @@ Many thanks to [Yeasin Arafat](https://dribbble.com/shots/14883627-Tab-Bar-Anima
 ## Our other open source SwiftUI libraries
 [PopupView](https://github.com/exyte/PopupView) - Toasts and popups library    
 [Grid](https://github.com/exyte/Grid) - The most powerful Grid container    
-[ScalingHeaderScrollView](https://github.com/exyte/ScalingHeaderScrollView) - A scroll view with a sticky header which shrinks as you scroll.    
+[ScalingHeaderScrollView](https://github.com/exyte/ScalingHeaderScrollView) - A scroll view with a sticky header which shrinks as you scroll    
 [MediaPicker](https://github.com/exyte/mediapicker) - Customizable media picker     
-[Chat](https://github.com/exyte/chat) - Chat UI framework with fully customizable message cells, input view, and a built-in media picker    
+[Chat](https://github.com/exyte/chat) - Chat UI framework with fully customizable message cells, input view, and a built-in media picker  
+[OpenAI](https://github.com/exyte/OpenAI) Wrapper lib for [OpenAI REST API](https://platform.openai.com/docs/api-reference/introduction)    
+[AnimatedGradient](https://github.com/exyte/AnimatedGradient) - Animated linear gradient     
 [ConcentricOnboarding](https://github.com/exyte/ConcentricOnboarding) - Animated onboarding flow    
 [FloatingButton](https://github.com/exyte/FloatingButton) - Floating button menu    
 [ActivityIndicatorView](https://github.com/exyte/ActivityIndicatorView) - A number of animated loading indicators    
 [ProgressIndicatorView](https://github.com/exyte/ProgressIndicatorView) - A number of animated progress indicators    
+[FlagAndCountryCode](https://github.com/exyte/FlagAndCountryCode) - Phone codes and flags for every country    
 [SVGView](https://github.com/exyte/SVGView) - SVG parser    
 [LiquidSwipe](https://github.com/exyte/LiquidSwipe) - Liquid navigation animation    
