@@ -66,3 +66,12 @@ extension View {
         modifier(FrameGetter(frame: frame))
     }
 }
+
+extension Image {
+    func imageResizer(_ size: CGFloat) -> some View {
+        self
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: size, height: size)
+   }
+}
