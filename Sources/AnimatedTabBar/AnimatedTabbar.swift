@@ -63,11 +63,19 @@ public struct AnimatedTabBar: View {
 
     private let circleSize = 10.0
 
+    @Environment(\.layoutDirection) private var layoutDirection
+
     public var body: some View {
         VStack {
             HStack(alignment: .bottom) {
-                circle
-                Spacer()
+                if layoutDirection == .rightToLeft {
+                    Spacer()
+                    circle
+                        .scaleEffect(x: layoutDirection == .rightToLeft ? -1 : 1, y: 1)
+                } else {
+                    circle
+                    Spacer()
+                }
             }
 
             ZStack {
