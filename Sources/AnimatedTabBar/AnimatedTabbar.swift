@@ -17,7 +17,7 @@ public struct AnimatedTabBar: View {
 
     @Binding private var selectedIndex: Int
     @Binding private var prevSelectedIndex: Int
-    private let views: [AnyView]
+    private var views: [AnyView] = []
 
     public init<Views>(selectedIndex: Binding<Int>,
                        prevSelectedIndex: Binding<Int>? = nil,
@@ -52,14 +52,14 @@ public struct AnimatedTabBar: View {
     private var buttonsAnimation: Animation = .easeOut(duration: 0.6)
     private var ballTrajectory: BallTrajectory = .parabolic
 
-    private var didSelectIndex: ((Int)->())?
+    private var didSelectIndex: ((Int)->())? = nil
 
     // MARK: - Properties
 
     @State private var frames: [CGRect] = []
     @State private var tBall: CGFloat = 0
     @State private var tIndent: CGFloat = 0
-    @State private var internalPrevSelectedIndex: Int
+    @State private var internalPrevSelectedIndex: Int = 0
 
     private let circleSize = 10.0
 
