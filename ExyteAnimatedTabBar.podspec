@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "ExyteAnimatedTabBar"
-  s.version          = "0.1.3"
+  s.version          = "0.1.4"
   s.summary          = "AnimatedTabBar is a tabbar with number of preset animations written in pure SwiftUI"
 
   s.homepage         = 'https://github.com/exyte/AnimatedTabBar.git'
