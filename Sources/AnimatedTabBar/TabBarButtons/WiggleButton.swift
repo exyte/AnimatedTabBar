@@ -11,11 +11,13 @@ public struct WiggleButton: View {
 
     public var image: Image
     public var maskImage: Image
+    public var imageSize: CGFloat
     public var isSelected: Bool
 
-    public init(image: Image, maskImage: Image, isSelected: Bool) {
+    public init(image: Image, maskImage: Image, imageSize: CGFloat? = nil, isSelected: Bool) {
         self.image = image
         self.maskImage = maskImage
+        self.imageSize = imageSize ?? 20
         self.isSelected = isSelected
     }
 
@@ -30,8 +32,12 @@ public struct WiggleButton: View {
         ZStack {
             WiggleButtonBg(t: tForBg)
                 .opacity(0.4)
-                .mask(maskImage)
+                .mask(
+                    maskImage
+                        .imageResizer(imageSize)
+                )
             image
+                .imageResizer(imageSize)
         }
         .scaleEffect(scale)
         .onChange(of: isSelected) { newValue in
@@ -80,4 +86,3 @@ struct WiggleButtonBg: Shape {
         return path
     }
 }
-
