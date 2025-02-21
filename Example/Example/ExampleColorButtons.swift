@@ -74,7 +74,7 @@ struct ColorButtonOutlineBell: View, Animatable {
     var image: Image
     var t: CGFloat
 
-    var animatableData: CGFloat {
+    nonisolated var animatableData: CGFloat {
         get { t }
         set { t = newValue }
     }
@@ -112,7 +112,7 @@ struct ColorButtonOutlineCalendar: View, Animatable {
     var fromLeft: Bool
     var t: CGFloat
 
-    var animatableData: CGFloat {
+    nonisolated var animatableData: CGFloat {
         get { t }
         set { t = newValue }
     }

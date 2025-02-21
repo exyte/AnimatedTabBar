@@ -25,7 +25,7 @@ public struct KeyframeWiggleButton: View {
 
     public var body: some View {
         image
-            .keyframeAnimator(initialValue: AnimationValues(), trigger: isSelected) { content, value in
+            .keyframeAnimator(initialValue: AnimationValues(), trigger: isSelected) { [isGrowing] content, value  in
                 ZStack {
                     KeyframeWiggleButtonBg(t: isGrowing ? value.bgWiggle : 0)
                         .opacity(0.4)

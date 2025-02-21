@@ -59,7 +59,7 @@ public struct AnimatedTabBar: View {
     @State private var frames: [CGRect] = []
     @State private var tBall: CGFloat = 0
     @State private var tIndent: CGFloat = 0
-    @State private var internalPrevSelectedIndex: Int = 0
+    @State private var internalPrevSelectedIndex: Int
 
     private let circleSize = 10.0
 
@@ -167,19 +167,21 @@ public struct AnimatedTabBar: View {
 
     @ViewBuilder
     var background: some View {
-        switch ballTrajectory {
-        case .parabolic, .teleport:
-            HStack(spacing: 0) {
-                ForEach(0..<views.count, id: \.self) { i in
-                    IndentableRect(t: selectedIndex == i ? 1 : 0, delay: 0.7)
-                        .foregroundColor(barColor)
-                        .animation(indentAnimation, value: selectedIndex)
+        if let _ = frames[safe: selectedIndex] {
+            switch ballTrajectory {
+            case .parabolic, .teleport:
+                HStack(spacing: 0) {
+                    ForEach(0..<views.count, id: \.self) { i in
+                        IndentableRect(t: selectedIndex == i ? 1 : 0, delay: 0.7)
+                            .foregroundColor(barColor)
+                            .animation(indentAnimation, value: selectedIndex)
+                    }
                 }
-            }
 
-        case .straight:
-            SlidingIndentRect(t: tIndent, indentX: getCoord(selectedIndex).x, prevIndentX: getCoord(internalPrevSelectedIndex).x)
-                .foregroundColor(barColor)
+            case .straight:
+                SlidingIndentRect(t: tIndent, indentX: getCoord(selectedIndex).x, prevIndentX: getCoord(internalPrevSelectedIndex).x)
+                    .foregroundColor(barColor)
+            }
         }
     }
 
