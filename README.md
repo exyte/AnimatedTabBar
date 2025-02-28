@@ -108,7 +108,8 @@ github "Exyte/AnimatedTabBar"
 Many thanks to [Yeasin Arafat](https://dribbble.com/shots/14883627-Tab-Bar-Animation) for their beautiful original work that we recreated with SwiftUI.
 
 ## Our other open source SwiftUI libraries
-[PopupView](https://github.com/exyte/PopupView) - Toasts and popups library    
+[PopupView](https://github.com/exyte/PopupView) - Toasts and popups library   
+[AnchoredPopup](https://github.com/exyte/AnchoredPopup) - Anchored Popup grows "out" of a trigger view (similar to Hero animation) 
 [Grid](https://github.com/exyte/Grid) - The most powerful Grid container    
 [ScalingHeaderScrollView](https://github.com/exyte/ScalingHeaderScrollView) - A scroll view with a sticky header which shrinks as you scroll    
 [MediaPicker](https://github.com/exyte/mediapicker) - Customizable media picker     
