@@ -7,27 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5B1F0C432A39AD49004FCA22 /* KeyframeWiggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1F0C422A39AD49004FCA22 /* KeyframeWiggleButton.swift */; };
-		5B952DFC297E50DF003897E7 /* ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B952DFB297E50DF003897E7 /* ExampleApp.swift */; };
-		5B952DFE297E50DF003897E7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B952DFD297E50DF003897E7 /* ContentView.swift */; };
-		5B952E00297E50E0003897E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B952DFF297E50E0003897E7 /* Assets.xcassets */; };
-		5B952E03297E50E0003897E7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B952E02297E50E0003897E7 /* Preview Assets.xcassets */; };
+		5B2408742D93EF24002D6692 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2408722D93EF24002D6692 /* Utils.swift */; };
+		5B2408752D93EF24002D6692 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B24086D2D93EF24002D6692 /* ContentView.swift */; };
+		5B2408762D93EF24002D6692 /* ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B24086E2D93EF24002D6692 /* ExampleApp.swift */; };
+		5B2408772D93EF24002D6692 /* KeyframeWiggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2408712D93EF24002D6692 /* KeyframeWiggleButton.swift */; };
+		5B2408782D93EF24002D6692 /* ExampleColorButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B24086F2D93EF24002D6692 /* ExampleColorButtons.swift */; };
+		5B24087A2D93EF24002D6692 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B24086C2D93EF24002D6692 /* Assets.xcassets */; };
 		5B952E2D297E5A2D003897E7 /* AnimatedTabBar in Frameworks */ = {isa = PBXBuildFile; productRef = 5B952E2C297E5A2D003897E7 /* AnimatedTabBar */; };
-		5B952E31297E5AA6003897E7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B952E30297E5AA6003897E7 /* Utils.swift */; };
-		5BE4006F2983A5F5009423A4 /* ExampleColorButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE4006E2983A5F5009423A4 /* ExampleColorButtons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5B03324B2987B7B80058FC9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		5B1F0C422A39AD49004FCA22 /* KeyframeWiggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyframeWiggleButton.swift; sourceTree = "<group>"; };
+		5B24086C2D93EF24002D6692 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5B24086D2D93EF24002D6692 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5B24086E2D93EF24002D6692 /* ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleApp.swift; sourceTree = "<group>"; };
+		5B24086F2D93EF24002D6692 /* ExampleColorButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleColorButtons.swift; sourceTree = "<group>"; };
+		5B2408702D93EF24002D6692 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B2408712D93EF24002D6692 /* KeyframeWiggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyframeWiggleButton.swift; sourceTree = "<group>"; };
+		5B2408722D93EF24002D6692 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		5B952DF8297E50DF003897E7 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5B952DFB297E50DF003897E7 /* ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleApp.swift; sourceTree = "<group>"; };
-		5B952DFD297E50DF003897E7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		5B952DFF297E50E0003897E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5B952E02297E50E0003897E7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5B952E2A297E5953003897E7 /* AnimatedTabBar */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AnimatedTabBar; path = ..; sourceTree = "<group>"; };
-		5B952E30297E5AA6003897E7 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		5BE4006E2983A5F5009423A4 /* ExampleColorButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleColorButtons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,12 +40,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B2408732D93EF24002D6692 /* AnimatedTabBarExample */ = {
+			isa = PBXGroup;
+			children = (
+				5B24086C2D93EF24002D6692 /* Assets.xcassets */,
+				5B24086D2D93EF24002D6692 /* ContentView.swift */,
+				5B24086E2D93EF24002D6692 /* ExampleApp.swift */,
+				5B24086F2D93EF24002D6692 /* ExampleColorButtons.swift */,
+				5B2408702D93EF24002D6692 /* Info.plist */,
+				5B2408712D93EF24002D6692 /* KeyframeWiggleButton.swift */,
+				5B2408722D93EF24002D6692 /* Utils.swift */,
+			);
+			path = AnimatedTabBarExample;
+			sourceTree = "<group>";
+		};
 		5B952DEF297E50DF003897E7 = {
 			isa = PBXGroup;
 			children = (
 				5B952E26297E5740003897E7 /* Packages */,
-				5B952DFA297E50DF003897E7 /* Example */,
 				5B952DF9297E50DF003897E7 /* Products */,
+				5B2408732D93EF24002D6692 /* AnimatedTabBarExample */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,29 +69,6 @@
 				5B952DF8297E50DF003897E7 /* Example.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		5B952DFA297E50DF003897E7 /* Example */ = {
-			isa = PBXGroup;
-			children = (
-				5B03324B2987B7B80058FC9A /* Info.plist */,
-				5B952DFB297E50DF003897E7 /* ExampleApp.swift */,
-				5B952E30297E5AA6003897E7 /* Utils.swift */,
-				5B952DFD297E50DF003897E7 /* ContentView.swift */,
-				5BE4006E2983A5F5009423A4 /* ExampleColorButtons.swift */,
-				5B1F0C422A39AD49004FCA22 /* KeyframeWiggleButton.swift */,
-				5B952DFF297E50E0003897E7 /* Assets.xcassets */,
-				5B952E01297E50E0003897E7 /* Preview Content */,
-			);
-			path = Example;
-			sourceTree = "<group>";
-		};
-		5B952E01297E50E0003897E7 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				5B952E02297E50E0003897E7 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		5B952E26297E5740003897E7 /* Packages */ = {
@@ -128,7 +117,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5B952DF3297E50DF003897E7 /* Build configuration list for PBXProject "Example" */;
+			buildConfigurationList = 5B952DF3297E50DF003897E7 /* Build configuration list for PBXProject "AnimatedTabBarExample" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -151,8 +140,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B952E03297E50E0003897E7 /* Preview Assets.xcassets in Resources */,
-				5B952E00297E50E0003897E7 /* Assets.xcassets in Resources */,
+				5B24087A2D93EF24002D6692 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,11 +151,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B1F0C432A39AD49004FCA22 /* KeyframeWiggleButton.swift in Sources */,
-				5B952DFE297E50DF003897E7 /* ContentView.swift in Sources */,
-				5B952DFC297E50DF003897E7 /* ExampleApp.swift in Sources */,
-				5BE4006F2983A5F5009423A4 /* ExampleColorButtons.swift in Sources */,
-				5B952E31297E5AA6003897E7 /* Utils.swift in Sources */,
+				5B2408742D93EF24002D6692 /* Utils.swift in Sources */,
+				5B2408752D93EF24002D6692 /* ContentView.swift in Sources */,
+				5B2408762D93EF24002D6692 /* ExampleApp.swift in Sources */,
+				5B2408772D93EF24002D6692 /* KeyframeWiggleButton.swift in Sources */,
+				5B2408782D93EF24002D6692 /* ExampleColorButtons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +219,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
@@ -284,6 +273,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -295,11 +285,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Example/Preview Content\"";
 				DEVELOPMENT_TEAM = FZXCM5CJ7P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Example/Info.plist;
+				INFOPLIST_FILE = AnimatedTabBarExample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -311,8 +300,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = exyte.Example;
+				PRODUCT_BUNDLE_IDENTIFIER = com.exyte.AnimatedTabBarExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -326,11 +318,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Example/Preview Content\"";
 				DEVELOPMENT_TEAM = FZXCM5CJ7P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Example/Info.plist;
+				INFOPLIST_FILE = AnimatedTabBarExample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -342,8 +333,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = exyte.Example;
+				PRODUCT_BUNDLE_IDENTIFIER = com.exyte.AnimatedTabBarExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -353,7 +347,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5B952DF3297E50DF003897E7 /* Build configuration list for PBXProject "Example" */ = {
+		5B952DF3297E50DF003897E7 /* Build configuration list for PBXProject "AnimatedTabBarExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5B952E04297E50E0003897E7 /* Debug */,

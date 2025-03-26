@@ -15,8 +15,8 @@ struct CircleValues {
 
 struct ContentView: View {
 
-    @State private var selectedIndex = 0
-    @State private var prevSelectedIndex = 0
+    @State private var selectedIndex = 1
+    @State private var prevSelectedIndex = 1
 
     let names = ["heart", "leaf", "drop", "circle", "book"]
 

@@ -11,12 +11,11 @@
 
 <a href="https://exyte.com/blog/swiftui-animated-tabbar">Read Article »</a>
 
-![](https://img.shields.io/github/v/tag/exyte/popupView?label=Version)
+![](https://img.shields.io/github/v/tag/exyte/AnimatedTabBar?label=Version)
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fexyte%2FAnimatedTabBar%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/exyte/AnimatedTabBar)
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fexyte%2FAnimatedTabBar%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/exyte/AnimatedTabBar)
-[![SPM Compatible](https://img.shields.io/badge/SwiftPM-Compatible-brightgreen.svg)](https://swiftpackageindex.com/exyte/AnimatedTabBar)
-[![Cocoapods Compatible](https://img.shields.io/badge/cocoapods-Compatible-brightgreen.svg)](https://cocoapods.org/pods/ExyteAnimatedTabBar)
-[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-brightgreen.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![SPM](https://img.shields.io/badge/SPM-Compatible-brightgreen.svg)](https://swiftpackageindex.com/exyte/AnimatedTabBar)
+[![Cocoapods](https://img.shields.io/badge/Cocoapods-Deprecated%20after%200.1.4-yellow.svg)](https://cocoapods.org/pods/ExyteAnimatedTabBar)
 [![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](https://opensource.org/licenses/MIT)
 
 # Usage
@@ -67,9 +66,7 @@ By default tabs only have a simple color animation, but you can customize that. 
 
 To try the AnimatedTabBar examples:
 - Clone the repo `https://github.com/exyte/AnimatedTabBar.git`
-- Open terminal and run `cd <AnimatedTabBarRepo>/Example/`
-- Run `pod install` to install all dependencies
-- Run `open AnimatedTabBarExample.xcworkspace/` to open the project in Xcode
+- Open `AnimatedTabBarExample.xcodeproj` in the Xcode
 - Try it!
 
 ## Installation
@@ -80,22 +77,6 @@ To try the AnimatedTabBar examples:
 dependencies: [
     .package(url: "https://github.com/exyte/AnimatedTabBar.git")
 ]
-```
-
-### [CocoaPods](http://cocoapods.org)
-
-To install `AnimatedTabBar`, simply add the following line to your Podfile:
-
-```ruby
-pod 'ExyteAnimatedTabBar'
-```
-
-### [Carthage](http://github.com/Carthage/Carthage)
-
-To integrate `AnimatedTabBar` into your Xcode project using Carthage, specify it in your `Cartfile`
-
-```ogdl
-github "Exyte/AnimatedTabBar"
 ```
 
 ## Requirements
