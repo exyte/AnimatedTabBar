@@ -52,7 +52,7 @@ struct DropletButtonAnimatable: View, Animatable {
         self.t = t
     }
 
-    public var animatableData: CGFloat {
+    nonisolated public var animatableData: CGFloat {
         get { t }
         set { t = newValue }
     }

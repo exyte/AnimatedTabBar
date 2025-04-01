@@ -59,7 +59,7 @@ public struct AnimatedTabBar: View {
     @State private var frames: [CGRect] = []
     @State private var tBall: CGFloat = 0
     @State private var tIndent: CGFloat = 0
-    @State private var internalPrevSelectedIndex: Int
+    @State private var internalPrevSelectedIndex: Int = 0
 
     private let circleSize = 10.0
 
@@ -110,7 +110,9 @@ public struct AnimatedTabBar: View {
                 }
                 .coordinateSpace(name: buttonsBarSpace)
                 .onPreferenceChange(ButtonPreferenceKey.self) { frames in
-                    self.frames = frames
+                    DispatchQueue.main.async {
+                        self.frames = frames
+                    }
                 }
                 .padding(.vertical, verticalPadding)
             }

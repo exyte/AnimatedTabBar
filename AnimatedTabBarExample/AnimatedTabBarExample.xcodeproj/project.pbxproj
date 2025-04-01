@@ -24,7 +24,7 @@
 		5B2408702D93EF24002D6692 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B2408712D93EF24002D6692 /* KeyframeWiggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyframeWiggleButton.swift; sourceTree = "<group>"; };
 		5B2408722D93EF24002D6692 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		5B952DF8297E50DF003897E7 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B952DF8297E50DF003897E7 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Example.app; path = "/Users/f3dm76/Work/!OpenSource/AnimatedTabBar/AnimatedTabBarExample/build/Debug-iphoneos/Example.app"; sourceTree = "<absolute>"; };
 		5B952E2A297E5953003897E7 /* AnimatedTabBar */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AnimatedTabBar; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,26 +57,9 @@
 		5B952DEF297E50DF003897E7 = {
 			isa = PBXGroup;
 			children = (
-				5B952E26297E5740003897E7 /* Packages */,
-				5B952DF9297E50DF003897E7 /* Products */,
+				5B952E2A297E5953003897E7 /* AnimatedTabBar */,
 				5B2408732D93EF24002D6692 /* AnimatedTabBarExample */,
 			);
-			sourceTree = "<group>";
-		};
-		5B952DF9297E50DF003897E7 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5B952DF8297E50DF003897E7 /* Example.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		5B952E26297E5740003897E7 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				5B952E2A297E5953003897E7 /* AnimatedTabBar */,
-			);
-			name = Packages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,7 +93,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1410;
-				LastUpgradeCheck = 1410;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					5B952DF7297E50DF003897E7 = {
 						CreatedOnToolsVersion = 14.1;
@@ -126,7 +109,7 @@
 				Base,
 			);
 			mainGroup = 5B952DEF297E50DF003897E7;
-			productRefGroup = 5B952DF9297E50DF003897E7 /* Products */;
+			productRefGroup = 5B952DEF297E50DF003897E7;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -198,6 +181,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -219,7 +203,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 6.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -259,6 +243,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -273,7 +258,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 6.0;
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -306,7 +291,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 6.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -339,7 +324,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 6.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

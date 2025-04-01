@@ -38,7 +38,7 @@ struct ButtonsBar: Layout {
 struct ButtonPreferenceKey: PreferenceKey {
     typealias Value = [CGRect]
 
-    static var defaultValue: Value = []
+    static let defaultValue: Value = []
 
     static func reduce(value: inout Value, nextValue: () -> Value) {
         value.append(contentsOf: nextValue())
