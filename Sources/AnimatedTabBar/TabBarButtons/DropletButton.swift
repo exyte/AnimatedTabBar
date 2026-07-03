@@ -19,7 +19,7 @@ public struct DropletButton: View {
         self.isSelected = isSelected
     }
 
-    @State var t: CGFloat = 0
+    @State private var t: CGFloat = 0
 
     public var body: some View {
         DropletButtonAnimatable(imageName: imageName, dropletColor: dropletColor, t: t)
@@ -77,12 +77,21 @@ struct DropletButtonAnimatable: View, Animatable {
         }
     }
 
+    @ViewBuilder
+    private var maskView: some View {
+        if t > 0.5 {
+            Image(imageName)
+        } else {
+            Rectangle().frame(width: frame.width, height: frame.height)
+        }
+    }
+
     public var body: some View {
         ZStack {
             Image(imageName)
                 .padding(.vertical, 10)
             Droplet(t: dropletParam)
-                .mask(t > 0.5 ? AnyView(Image(imageName)) : AnyView(Rectangle().frame(width: frame.width, height: frame.height)))
+                .mask(maskView)
                 .foregroundColor(dropletColor)
         }
         .scaleEffect(scale)

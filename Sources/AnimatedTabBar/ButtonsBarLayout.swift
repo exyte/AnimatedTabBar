@@ -11,19 +11,22 @@ let buttonsBarSpace = "ButtonsBarSpace"
 
 struct ButtonsBar: Layout {
 
-    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
-        let idealViewSizes = subviews.map { $0.sizeThatFits(.unspecified) }
-        let height = idealViewSizes.reduce(0) { max($0, $1.height) }
+    typealias Cache = [CGSize]
+
+    func makeCache(subviews: Subviews) -> [CGSize] { [] }
+
+    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout [CGSize]) -> CGSize {
+        cache = subviews.map { $0.sizeThatFits(.unspecified) }
+        let height = cache.reduce(0) { max($0, $1.height) }
 
         return CGSize(width: proposal.width ?? 0, height: height)
     }
 
-    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
+    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout [CGSize]) {
         var pt = CGPoint(x: bounds.minX, y: bounds.minY)
         let widthDelta = bounds.width / CGFloat(subviews.count)
 
-        for v in subviews {
-            let idealViewSize = v.sizeThatFits(.unspecified)
+        for (v, idealViewSize) in zip(subviews, cache) {
             let x = pt.x + widthDelta/2 - idealViewSize.width/2
             let y = bounds.midY - idealViewSize.height/2
             let point = CGPoint(x: x, y: y)

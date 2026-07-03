@@ -69,7 +69,7 @@ extension CGPath {
 
     func point(at percent: CGFloat, with elements: [PathElement]) -> CGPoint? {
 
-        let percentLength = length * percent
+        let percentLength = getLength(with: elements) * percent
         var lengthTraversed: CGFloat = 0
         var firstPointInSubpath: CGPoint?
 

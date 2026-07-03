@@ -24,7 +24,7 @@ public struct AnimatedTabBar: View {
                        @ViewBuilder content: @escaping () -> TupleView<Views>) {
         self._selectedIndex = selectedIndex
         self._prevSelectedIndex = prevSelectedIndex ?? .constant(0)
-        self.internalPrevSelectedIndex = selectedIndex.wrappedValue
+        self._internalPrevSelectedIndex = State(initialValue: selectedIndex.wrappedValue)
         self.views = content().getViews
     }
 
@@ -33,7 +33,7 @@ public struct AnimatedTabBar: View {
                                views: [Content]) {
         self._selectedIndex = selectedIndex
         self._prevSelectedIndex = prevSelectedIndex ?? .constant(0)
-        self.internalPrevSelectedIndex = selectedIndex.wrappedValue
+        self._internalPrevSelectedIndex = State(initialValue: selectedIndex.wrappedValue)
         self.views = views.map { AnyView($0) }
     }
 

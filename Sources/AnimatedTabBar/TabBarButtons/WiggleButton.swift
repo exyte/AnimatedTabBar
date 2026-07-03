@@ -21,8 +21,8 @@ public struct WiggleButton: View {
         self.isSelected = isSelected
     }
 
-    @State var t: CGFloat = 0
-    @State var tForBg: CGFloat = 0
+    @State private var t: CGFloat = 0
+    @State private var tForBg: CGFloat = 0
 
     var scale: CGFloat {
         1 + t * 0.2
