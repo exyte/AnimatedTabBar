@@ -95,6 +95,7 @@ Many thanks to [Yeasin Arafat](https://dribbble.com/shots/14883627-Tab-Bar-Anima
 [ScalingHeaderScrollView](https://github.com/exyte/ScalingHeaderScrollView) - A scroll view with a sticky header which shrinks as you scroll    
 [MediaPicker](https://github.com/exyte/mediapicker) - Customizable media picker     
 [Chat](https://github.com/exyte/chat) - Chat UI framework with fully customizable message cells, input view, and a built-in media picker  
+[CalendarView](https://github.com/exyte/CalendarView) - Calendar view with fully customizable month/day cells     
 [OpenAI](https://github.com/exyte/OpenAI) Wrapper lib for [OpenAI REST API](https://platform.openai.com/docs/api-reference/introduction)    
 [AnimatedGradient](https://github.com/exyte/AnimatedGradient) - Animated linear gradient     
 [ConcentricOnboarding](https://github.com/exyte/ConcentricOnboarding) - Animated onboarding flow    
