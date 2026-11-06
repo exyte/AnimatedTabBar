@@ -89,6 +89,7 @@ dependencies: [
 Many thanks to [Yeasin Arafat](https://dribbble.com/shots/14883627-Tab-Bar-Animation) for their beautiful original work that we recreated with SwiftUI.
 
 ## Our other open source SwiftUI libraries
+[LazyCustomLayout](https://github.com/exyte/LazyCustomLayout) - A custom layout protocol for SwiftUI, powered by a lazy scroll view   
 [PopupView](https://github.com/exyte/PopupView) - Toasts and popups library   
 [AnchoredPopup](https://github.com/exyte/AnchoredPopup) - Anchored Popup grows "out" of a trigger view (similar to Hero animation)    
 [Grid](https://github.com/exyte/Grid) - The most powerful Grid container    
